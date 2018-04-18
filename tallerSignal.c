@@ -9,13 +9,17 @@
 void manejador(int signal);
 
 int main(){
-	int numIteraciones=3;
+	int numIteraciones=0;
 	pid_t padre;
 	pid_t hijos[NUMHIJOS],h1,h2;
 	int i=0,contador=0;
 	padre=getpid();
 	signal(SIGUSR1,manejador);
 	
+
+
+	printf("Escriba el numero de iteraciones que hara el programa: ");
+	scanf("%d",&numIteraciones);
 	for(i=0;i<2;i++){
 		hijos[i]=fork();
 		if (hijos[i]==0){
