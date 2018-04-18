@@ -39,6 +39,7 @@ int main(){
 			sleep(1);
 			printf("padre [%d]\n",padre);
 			kill(hijos[i-1],SIGUSR1);
+			pause();
 		}else{
 			if(i==1){
 				pause();
@@ -72,12 +73,13 @@ int main(){
 		}
 	}
 	if(getpid() == padre){
-		pause();
+		
        for (int i = 0; i <NUMHIJOS ;i++){
             	wait(0);
         	}
     }
 }
+
 
 
 
